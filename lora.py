@@ -5,4 +5,6 @@
 
 from llama_index.core import SimpleDirectoryReader
 
+datasets = SimpleDirectoryReader(input_files = ["lora.pdf"])
+
 
