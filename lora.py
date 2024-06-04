@@ -16,6 +16,8 @@ nodes = chunk_data.get_nodes_from_documents(datasets)
 
 node_metadata = nodes[0].get_content(metadata_mode = True)
 print(str(node_metadata))
+
+len(nodes)
 #print(datasets)
 
 
