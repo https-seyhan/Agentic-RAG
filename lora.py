@@ -9,9 +9,14 @@ from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 chunk_data = SentenceSplitter(chunk_size =1024)
 
+
 datasets = SimpleDirectoryReader(input_files = ["/home/saul/Desktop/agentic_rag/basics/lora.pdf"]).load_data()
 
-print(datasets)
+nodes = chunk_data.get_nodes_from_documents(datasets)
+
+node_metadata = nodes[0].get_content(metadata_mode = True)
+print(str(node_metadata))
+#print(datasets)
 
 
 
