@@ -9,7 +9,7 @@ from llama_index.core import SimpleDirectoryReader
 
 datasets = SimpleDirectoryReader(input_files = ["/home/saul/Desktop/agentic_rag/basics/lora.pdf"]).load_data()
 
-
+print(datasets)
 
 
 
