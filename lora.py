@@ -33,5 +33,8 @@ Settings.embedding = OpenAIEmbedding(model = "text-embedding-ada-002")
 
 #Create Indexes
 
+summary_index = SummaryIndex(nodes = nodes)
+vector_index = VectorStoreIndex(nodes = nodes)
+
 
 
