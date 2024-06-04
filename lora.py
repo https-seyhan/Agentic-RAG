@@ -12,6 +12,16 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core import SummaryIndex, VectorStoreIndex
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
+
+from llama_index.core.tools import QueryEngineTool
+
+from llama_index.core.query_engine.router_query_engine import RouterQueryEngine
+from llama_index.core.selectors import LLMSingleSelector
+
+import openai
+
+openai.api_key = ""
+
 chunk_data = SentenceSplitter(chunk_size =1024)
 
 
@@ -34,7 +44,46 @@ Settings.embedding = OpenAIEmbedding(model = "text-embedding-ada-002")
 #Create Indexes
 
 summary_index = SummaryIndex(nodes = nodes)
-vector_index = VectorStoreIndex(nodes = nodes)
+#vector_index = VectorStoreIndex(nodes = nodes)
+
+# Creating Query Engines
+
+summary_query_engine = summary_index.as_query_engine(
+	response_model = "tree_summary",
+	use_async = True
+)
+
+#vector_query_engine = vector_index.as_query_engine()
+
+# Create Query Tool
+
+summary_tool = QueryEngineTool(
+	query_engine=summary_query_engine,
+	metadata = node_metadata
+	)
+	
+#vector_query_engine = vector_index.as_query_engine ()
+
+# Create Router Query Engine
+
+query_engine = RouterQueryEngine(
+	selector = LLMSingleSelector.from_defaults(),
+	query_engine_tools = [summary_tool],
+	verbose = True
+)
+
+#response = query_engine.query("What is Equal contribution?")
+
+#print(str(response))
+
+
+
+
+
+
+
+
+
 
 
 
