@@ -29,6 +29,7 @@ print(len(nodes))
 # Create Model
 
 Settings.llm = OpenAI(model = "gpt-3.5-turbo")
+Settings.embedding = OpenAIEmbedding(model = "text-embedding-ada-002")
 
 
 
