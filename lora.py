@@ -9,7 +9,7 @@ import llama_index
 from llama_index.core import Settings
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
-
+from llama_index.core import SummaryIndex, VectorStoreIndex
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 chunk_data = SentenceSplitter(chunk_size =1024)
@@ -30,6 +30,8 @@ print(len(nodes))
 
 Settings.llm = OpenAI(model = "gpt-3.5-turbo")
 Settings.embedding = OpenAIEmbedding(model = "text-embedding-ada-002")
+
+#Create Indexes
 
 
 
