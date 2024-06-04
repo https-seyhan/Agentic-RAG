@@ -8,6 +8,8 @@ import browserbase
 import llama_index
 from llama_index.core import Settings
 from llama_index.llms.openai import OpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding
+
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core.node_parser import SentenceSplitter
 chunk_data = SentenceSplitter(chunk_size =1024)
