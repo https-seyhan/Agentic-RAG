@@ -28,7 +28,7 @@ def retrieve_documents(query, corpus, top_n=2):
 
 # Text Generation
 
-openai.api_key = 'your-openai-api-key'
+openai.api_key = ''
 
 def generate_text(prompt):
     response = openai.Completion.create(
@@ -38,4 +38,19 @@ def generate_text(prompt):
     )
     return response.choices[0].text.strip()
 
+# Agentic Behavior
 
+def agentic_rag(query, corpus):
+    # Decide when to retrieve based on query length or keywords
+    if len(query.split()) > 3 or "where" in query.lower():
+        retrieved_docs = retrieve_documents(query, corpus)
+        context = " ".join(retrieved_docs)
+        prompt = f"Context: {context}\n\nQuestion: {query}\n\nAnswer:"
+    else:
+        prompt = query
+    
+    return generate_text(prompt)
+
+query = "Where is the Eiffel Tower located?"
+response = agentic_rag(query, document_corpus)
+print(response)
