@@ -43,7 +43,7 @@ def generate_text(prompt):
 
 def agentic_rag(query, corpus):
     # Decide when to retrieve based on query length or keywords
-    if len(query.split()) > 3 or "where" in query.lower():
+    if len(query.split()) > 3 or "what" in query.lower():
         retrieved_docs = retrieve_documents(query, corpus)
         context = " ".join(retrieved_docs)
         prompt = f"Context: {context}\n\nQuestion: {query}\n\nAnswer:"
