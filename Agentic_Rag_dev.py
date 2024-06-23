@@ -52,6 +52,6 @@ def agentic_rag(query, corpus):
     
     return generate_text(prompt)
 
-query = "Where is the Eiffel Tower located?"
+query = "What is encoding loc"
 response = agentic_rag(query, document_corpus)
 print(response)
