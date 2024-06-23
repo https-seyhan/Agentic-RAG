@@ -12,6 +12,8 @@ document_corpus = [
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import openai
+
 
 def retrieve_documents(query, corpus, top_n=2):
     vectorizer = TfidfVectorizer()
@@ -25,7 +27,6 @@ def retrieve_documents(query, corpus, top_n=2):
     return relevant_docs
 
 # Text Generation
-import openai
 
 openai.api_key = 'your-openai-api-key'
 
