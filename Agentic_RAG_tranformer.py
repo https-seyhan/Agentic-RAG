@@ -23,6 +23,8 @@ documents = ["This is a document about AI.", "Another document related to machin
 embeddings = encode_text(documents).numpy()
 index.add(embeddings)
 
+# Step 2: Create the generative model
+
 # Load generative model and tokenizer
 gen_model_name = "gpt-3.5-turbo"  # Replace with the model you want to use
 gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_name)
