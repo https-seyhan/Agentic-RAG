@@ -30,6 +30,8 @@ gen_model_name = "gpt-3.5-turbo"  # Replace with the model you want to use
 gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_name)
 gen_model = AutoModelForCausalLM.from_pretrained(gen_model_name)
 
+# Step 3: Implement the RAG mechanism
+
 def retrieve_and_generate(query, num_docs=2):
     # Step 1: Retrieve relevant documents
     query_embedding = encode_text([query]).numpy()
