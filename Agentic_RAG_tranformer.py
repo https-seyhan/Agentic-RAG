@@ -53,6 +53,7 @@ response = retrieve_and_generate(query)
 print(response)
 
 
+# Step 4: Create the agentic framework
 class RAGAgent:
     def __init__(self, retriever, generator):
         self.retriever = retriever
