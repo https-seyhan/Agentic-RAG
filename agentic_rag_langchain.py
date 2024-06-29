@@ -19,3 +19,12 @@ Settings.chunk_size = 1024
 
 PERSIST_INDEX_DIR = '/home/saul/Desktop/agentic_rag/'
 
+
+
+
+
+# Setup Uber and Lyft Vector Indices
+uber_index = get_index("uber_10k",f"/{data_dir}/RAG/data/10k/uber_10k_2023.pdf")
+lyft_index = get_index("lyft_10k",f"/{data_dir}/RAG/data/10k/lyft_10k_2023.pdf")
+expedia_index = get_index("expedia_10k", f"/{data_dir}/RAG/data/10k/expedia_10k_2023.pdf")
+booking_index = get_index("booking_10k", f"/{data_dir}/RAG/data/10k/booking_10k_2023.pdf")
