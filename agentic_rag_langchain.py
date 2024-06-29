@@ -11,6 +11,7 @@ from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core import Settings
 from llama_index.core import SimpleDirectoryReader
+from llama_index.core import SummaryIndex, VectorStoreIndex
 from llama_index.readers.file.docs.base import DocxReader, HWPReader, PDFReader
 from llama_index.core import StorageContext, load_index_from_storage
 
