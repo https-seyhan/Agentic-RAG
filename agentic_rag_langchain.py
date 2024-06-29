@@ -20,7 +20,19 @@ Settings.chunk_size = 1024
 PERSIST_INDEX_DIR = '/home/saul/Desktop/agentic_rag/'
 
 
+def get_index(index_name, doc_file_path):
+  index = None
+  if not os.path.exists(f"{PERSIST_INDEX_DIR}{index_name}/"):
+    # Load the documents
+    documents = SimpleDirectoryReader(input_files=[doc_file_path]).load_data()
+    index = VectorStoreIndex.from_documents(documents)
+    # Store the index to disk
+    index.storage_context.persist(f"{PERSIST_INDEX_DIR}{index_name}/")
+  else: # Load index from disk
+    storage_context = StorageContext.from_defaults(persist_dir=f"{PERSIST_INDEX_DIR}{index_name}/")
+    index = load_index_from_storage(storage_context)
 
+  return index
 
 
 # Setup Uber and Lyft Vector Indices
