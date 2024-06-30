@@ -4,7 +4,7 @@ document_corpus = [
 "total loc: 240742845",
 "Validation loc:  2520910",
 "Test loc:  2897766",
-"Encoding loc:  23581583".
+"Encoding loc:  23581583",
 "1% training set loc:  4242264",
 "Full training set loc:  211742586"
 ]
