@@ -67,3 +67,5 @@ if __name__ == "__main__":
 #SentenceTransformer is used to encode documents and queries into embeddings.
 #FAISS is used to perform efficient similarity searches over document embeddings.
 #A sequence-to-sequence model like BART is used for the generative part to generate answers based on the retrieved documents.
+#The add_documents method adds documents to the system, 
+#while the answer method retrieves relevant documents and generates an answer to the input question.
