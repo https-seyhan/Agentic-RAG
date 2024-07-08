@@ -55,8 +55,8 @@ for question in questions:
         print(f"Answer: {answer.answer} (Score: {answer.score})")
 
 
-# 1, Initialize the Document Store: Set up an Elasticsearch document store to store and retrieve documents.
-# 2, Write Documents to the Document Store: Add some example documents to the store.
+# 1. Initialize the Document Store: Set up an Elasticsearch document store to store and retrieve documents.
+# 2. Write Documents to the Document Store: Add some example documents to the store.
 # Initialize the Retriever: Set up a retriever (BM25 in this case) to fetch relevant documents based on the query.
 # Initialize the Reader: Use a pre-trained Transformer model (e.g., RoBERTa) as the reader to extract answers from the retrieved documents.
 # Create a Pipeline: Combine the retriever and reader into an extractive QA pipeline.
