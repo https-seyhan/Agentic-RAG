@@ -1,3 +1,5 @@
+# pip install transformers sentence-transformers faiss-cpu
+
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from sentence_transformers import SentenceTransformer, util
