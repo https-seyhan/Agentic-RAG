@@ -62,3 +62,8 @@ if __name__ == "__main__":
     answer = rag_qa.answer(question)
     print(f"Question: {question}")
     print(f"Answer: {answer}")
+
+
+#SentenceTransformer is used to encode documents and queries into embeddings.
+#FAISS is used to perform efficient similarity searches over document embeddings.
+#A sequence-to-sequence model like BART is used for the generative part to generate answers based on the retrieved documents.
