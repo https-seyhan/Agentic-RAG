@@ -6,8 +6,9 @@ from haystack.pipelines import ExtractiveQAPipeline
 #pip install farm-haystack[all]
 #pip install transformers
 
-r#Ceating a Question Answering (QA) system using Retrieval-Augmented Generation (RAG) in Python involves several components, including a retriever model to find relevant documents 
-#and a generator model to produce answers based on those documents. Agentic libraries and frameworks can help in orchestrating these components.
+# Ceating a Question Answering (QA) system using Retrieval-Augmented Generation (RAG) in Python involves several components, including a retriever model to find relevant documents 
+# And a generator model to produce answers based on those documents. Agentic libraries and frameworks can help in orchestrating these components.
+# Assumes you have an Elasticsearch instance running
 
 # Step 1: Initialize the Document Store
 document_store = ElasticsearchDocumentStore(
