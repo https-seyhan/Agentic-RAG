@@ -1,4 +1,5 @@
 import faiss
+import torch
 from transformers import AutoTokenizer, AutoModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 # Step 1: Set up the retrieval system
