@@ -20,7 +20,7 @@ print(f"get the content for node 0 :{nodes[0].get_content(metadata_mode='all')}"
 
 
 from llama_index.llms.mistralai import MistralAI
-os.environ["vDCqlViBVLFpdxNu4PAztOyC6ixSGyi9"] = userdata.get("vDCqlViBVLFpdxNu4PAztOyC6ixSGyi9")
+os.environ[""] = userdata.get("")
 llm = MistralAI(model="mistral-large-latest")
 
 #instantiate Vectorstore
