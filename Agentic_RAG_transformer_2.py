@@ -4,12 +4,12 @@ import faiss
 from datasets import load_dataset
 
 # Load datasets
-dataset = load_dataset('wikipedia', '20200501.en', split='train[:1%]')  # Using a small subset for example
+dataset = load_dataset('wikipedia', '20200501.en', split='train[:1%]')  # Using a small subset
 
 # Preprocess data
 def preprocess_data(data):
     # Tokenize the text
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased') # BERT Model
     encoded_input = tokenizer(data['text'], padding=True, truncation=True, return_tensors='pt')
     return encoded_input
 
@@ -34,7 +34,7 @@ def search_index(index, query_embedding, k=5):
 # Generate response
 def generate_response(query, retrieved_docs):
     tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    model = GPT2LMHeadModel.from_pretrained('gpt2')
+    model = GPT2LMHeadModel.from_pretrained('gpt2') #GPT2 model
     
     # Concatenate query and retrieved documents
     input_text = query + ' '.join(retrieved_docs)
