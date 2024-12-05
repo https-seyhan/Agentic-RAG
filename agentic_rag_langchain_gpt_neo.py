@@ -72,6 +72,6 @@ def agent_query(query):
     return response
 
 # Example usage
-query = "What is the capital of France?"
+query = "What is LangChain?"
 response = agent_query(query)
 print(response)
