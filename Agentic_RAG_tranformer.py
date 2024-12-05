@@ -27,7 +27,7 @@ index.add(embeddings)
 # Step 2: Create the generative model
 
 # Load generative model and tokenizer
-gen_model_name = "gpt-3.5-turbo"  # Replace with the model you want to use
+gen_model_name = "gpt-3.5-turbo"  # Model for Casual LLM
 gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_name)
 gen_model = AutoModelForCausalLM.from_pretrained(gen_model_name)
 
