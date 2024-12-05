@@ -7,7 +7,7 @@ from langchain.llms import HuggingFaceLLM
 from langchain.agents import AgentExecutor, Tool
 
 # Initialize Sentence Transformer model for retrieval
-retriever_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+retriever_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2') #sBERT
 
 # Sample documents
 documents = [
